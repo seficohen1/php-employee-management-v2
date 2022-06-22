@@ -1,11 +1,11 @@
 <!-- entry point -->
 <?php 
 
-include 'libs/classes/Controller.php';
-// include 'libs/classes/Model.php';
-include 'libs/classes/View.php';
-include 'lib/Router.php';
-
+require_once 'libs/Controller.php';
+// require_once 'controller/ControllerModel.php';
+require_once 'libs/View.php';
+require_once 'libs/Router.php';
+require_once "controllers/mainController.php";
 
 $router = new Router();
 
