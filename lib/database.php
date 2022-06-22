@@ -1,8 +1,8 @@
 <?php 
 
-class Database {
-  function __construct()
-  {
+// class Database {
+//   function __construct()
+//   {
     // settings config for database connection
-  }
-}
+//   }
+// }
