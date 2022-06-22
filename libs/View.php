@@ -5,4 +5,8 @@ class View {
   {
     echo 'Base view';
   }
+
+  function render($name) {
+    require VIEWS . '/' . $name . '.php';
+  }
 }

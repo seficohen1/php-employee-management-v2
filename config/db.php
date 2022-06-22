@@ -1,3 +1,6 @@
-<?php 
-
-// define contstants for Host Database User and Password
+<?php
+define('HOST', 'localhost');
+define('DB', 'empmanger');
+define('USER', 'root');
+define('PASSWORD', '');
+define('CHARSET', 'utf8mb4');

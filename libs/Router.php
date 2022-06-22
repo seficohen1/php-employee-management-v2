@@ -1,70 +1,23 @@
 <?php 
 
-
+require_once(CONTROLLERS . '/ErrorController.php');
 
 
 class Router {
-  public $uri;
-  public $controller;
-  public $method;
-  public $param; // id
-
   function __construct()
   {
-    $this->setUri();
-    $this->setController();
-    $this->setMethod();
-    $this->setParam();
-    $this->execute();
+    $url = isset($_GET['url']) ? $_GET['url'] : null;
+    $url = rtrim($url, '/');
+    $url = explode('/', $url);
 
-  }
-
-  public function setUri()
-  {
-    $this->uri = explode('/', $_GET['url']);
-  }
-
-  public function setController()
-  {
-    $this->controller = $this->uri[0] === '' ? 'main' : $this->uri[0];
-  }
-
-  public function setMethod() {
-    $this->method = !empty($this->uri[1]) ? $this->uri[1] : 'nomethod';
-  }
-
-  public function setParam() {
-    $this->param = !empty($this->uri[2]) ? $this->uri[2] : ''; 
-  }
-
-
-  public function getUri() {
-    return $this->uri;
-  }
-
-  public function getController() {
-    return $this->controller;
-  }
-
-  public function getMethod() {
-    return $this->method;
-  }
-
-  public function getParam() {
-    return $this->param;
-  }
-  public function execute(){
-    $controller = $this->getController();
-    $method = $this->getMethod();
-    $param = $this->getParam();
-    $controlerFile = "controllers/" . $controller . "Controller.php";
-    echo $controlerFile;
-    if(file_exists($controlerFile)){
-      require_once $controlerFile;
-      $controller = new $controller;
-    }
-    else{
-      echo "error";
+    if(empty($url[0] || $url[0]) == 'main') {
+      $fileController = CONTROLLERS . '/MainController' . '.php';
+      require_once($fileController);
+      $controller = new MainController();
+      $controller->loadModel('Main');
+      $controller->getEmployees();
+      $controller->render();
+      
     }
   }
 }
