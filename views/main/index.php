@@ -22,14 +22,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta http-equiv="refresh" content= "10; ../index.php?logout.php"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
-    <script type="text/javascript" src="../assets/js/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css" integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../public/assets/css/main.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href= "<?php echo JS; ?>main.css">
  
     <title>Document</title>
 </head>
@@ -41,28 +39,57 @@
   // checkSessionExpire();
 
     ?>
+    <body>
+    <header
+      class="d-flex justify-content-around mt-3 bg-light align-items-center"
+    >
+      <div>
+        <h1 class="p-5">LOGO</h1>
+      </div>
+      <div class="nav-head d-flex">
+        <div class="dash">
+          <span class="btn_load_screen" call_type="dashboard"></span>
+          <a href="./dashboard.php" class="text-decoration-none" call_type="dashboard"><p class="fs-4  mb-">Dashboard</p></a>
+        </div>
+        <div class="employ">
+          
+          <span class="btn_load_screen" call_type="employee"></span>
+          <a href="./employee.php" class="text-decoration-none "><p class="fs-4">Employee</p></a>
+        </div>
+      </div>
+      <div>
+        <form method="GET" action="library/sessionHelper.php">
+          <button type="submit" class="btn btn-warning" name="logout">
+            Logout
+          </button>
+        </form>
+      
+      </div>
+      <div class="test">
 
-    <?php
-    require BASE_PATH .'/public/assets/html/header.html';
-    ?>
-
-
+      </div>
+    </header>
 
      <!------------ Table JsGrid ------------>
     <div id="wrapper">
-        <?php echo "Hello World!"?>
+        <?php echo "Hello World"?>
     </div>
 
 
      <!------------ Footer ------------>
-     <?php
-    require BASE_PATH .'/public/assets/html/footer.html';
-    ?>
+     <footer
+      class="d-flex justify-content-around mt-3 bg-light align-items-center"
+    >
+      <p>
+        Copyright &copy; 2027 by Employee Management, Inc. All rights reserved.
+      </p>
+    </footer>
 
     
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
-     <script src="../../public/assets/js/script.js"></script>
+     <script src="<?php echo JS; ?>/script.js"></script>
+     
      <!-- <script>
 setInterval(function() {
     checkUser();
@@ -79,5 +106,7 @@ function checkUser() {
     })
 }
      </script> -->
+
+ 
 </body>
 </html>

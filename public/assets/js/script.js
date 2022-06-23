@@ -1,5 +1,5 @@
 const getEmployeeJSON = async () => {
-  const url = "../resources/employees.json";
+  const url = "http://localhost:8080/php-employee-management-v2/dashboard";
   try {
     const rawData = await fetch(url);
     const data = await rawData.json();
@@ -25,10 +25,11 @@ $("#wrapper").jsGrid({
     loadData: function () {
       let d = $.Deferred();
       return $.ajax({
-        url: "../resources/employees.json",
+        url: "http://localhost:8080/php-employee-management-v2/dashboard",
         type: "GET",
         dataType: "json",
         success: function (data) {
+          console.log(data)
           return d.resolve(data);
         },
       });
@@ -182,8 +183,8 @@ $("#wrapper").jsGrid({
 /* Hide the id field */
 $("#wrapper").jsGrid("fieldOption", "id", "visible", false);
 
-const editBtn = document.getElementById("editBtn");
-editBtn.addEventListener("click", successUpdate());
+// const editBtn = document.getElementById("editBtn");
+// editBtn.addEventListener("click", successUpdate());
 
 /* Function to display a message when updating employee data */
 function successUpdate() {
@@ -196,3 +197,4 @@ function successUpdate() {
     }, 3000);
   }
 }
+

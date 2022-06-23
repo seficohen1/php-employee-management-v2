@@ -1,0 +1,26 @@
+{
+  "name": "php-employee-management-v2",
+  "version": "1.0.0",
+  "description": "`#php` `#mvc` `#master-in-software-engineering`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seficohen1/php-employee-management-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.1",
+    "bootstrap-icons": "^1.0.0-alpha4",
+    "gridjs": "^5.0.2",
+    "jquery": "^3.5.1",
+    "jsgrid": "^1.5.3"
+  },
+  "bugs": {
+    "url": "https://github.com/seficohen1/php-employee-management-v2/issues"
+  },
+  "homepage": "https://github.com/seficohen1/php-employee-management-v2#readme"
+}

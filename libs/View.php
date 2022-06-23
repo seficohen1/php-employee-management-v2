@@ -3,7 +3,6 @@
 class View {
   function __construct()
   {
-    echo 'Base view';
   }
 
   function render($name) {

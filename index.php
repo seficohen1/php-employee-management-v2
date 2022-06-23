@@ -1,4 +1,4 @@
-<!-- entry point -->
+
 <?php 
 require_once("config/baseConstants.php");
 require_once("config/constants.php");

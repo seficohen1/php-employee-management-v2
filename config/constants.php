@@ -10,3 +10,9 @@ define("VIEWS", BASE_PATH . '/views');
 
 //MODELS
 define("MODELS", BASE_PATH . '/models');
+
+//JS
+define('JS', BASE_URL . '/public/assets/js');
+
+//CSS
+define('CSS', BASE_URL . '/public/assets/css');
