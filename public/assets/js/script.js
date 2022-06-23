@@ -1,5 +1,5 @@
 const getEmployeeJSON = async () => {
-  const url = "http://localhost:8080/php-employee-management-v2/dashboard";
+  const url = "http://localhost:8080/php-employee-management-v2/employee";
   try {
     const rawData = await fetch(url);
     const data = await rawData.json();
@@ -25,12 +25,11 @@ $("#wrapper").jsGrid({
     loadData: function () {
       let d = $.Deferred();
       return $.ajax({
-        url: "http://localhost:8080/php-employee-management-v2/dashboard",
+        url: "http://localhost:8080/php-employee-management-v2/employee",
         type: "GET",
         dataType: "json",
         success: function (data) {
           console.log(data)
-          return d.resolve(data);
         },
       });
     },
@@ -54,7 +53,7 @@ $("#wrapper").jsGrid({
     /* Function to update an employee's data */
     updateItem: function (item) {
       var d = $.Deferred();
-      console.log(item);
+      console.log(item.id);
       return $.ajax({
         type: "PUT",
         url: "../src/library/employeeController.php",
@@ -68,7 +67,7 @@ $("#wrapper").jsGrid({
     deleteItem: function (item) {
       return $.ajax({
         type: "DELETE",
-        url: "./library/employeeController.php",
+        url: `./library/employeeController${item.id}.php`,
         data: item,
       }).done(function () {
         console.log("data deleted");
@@ -161,6 +160,7 @@ $("#wrapper").jsGrid({
   /* Redirects to the employee page with the employee's data. */
   rowClick: function (employeeId) {
     location.href = "./employee.php?employee=" + employeeId.item.id;
+   console.log(employeeId)
   },
   /* Redirects to the employee page with the employee's data. */
   onItemUpdated: function () {

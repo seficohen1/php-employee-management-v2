@@ -49,12 +49,12 @@
       <div class="nav-head d-flex">
         <div class="dash">
           <span class="btn_load_screen" call_type="dashboard"></span>
-          <a href="./dashboard.php" class="text-decoration-none" call_type="dashboard"><p class="fs-4  mb-">Dashboard</p></a>
+          <a href="http://localhost:8080/php-employee-management-v2/" class="text-decoration-none" call_type="dashboard"><p class="fs-4  mb-">Dashboard</p></a>
         </div>
         <div class="employ">
           
           <span class="btn_load_screen" call_type="employee"></span>
-          <a href="./employee.php" class="text-decoration-none "><p class="fs-4">Employee</p></a>
+          <a href="<?= BASE_PATH?>/views/index.php" class="text-decoration-none "><p class="fs-4">Add Employee</p></a>
         </div>
       </div>
       <div>
