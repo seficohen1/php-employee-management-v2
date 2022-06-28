@@ -1,0 +1,40 @@
+/* Reset Css  */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* employee CSS */
+.container {
+    width: 500px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+header h2 {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Header CSS */
+.nav-head {
+    margin-right: 200px;
+}
+
+.nav-head,
+h2 {
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.dash {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.employ {
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "assemblerschool",
+  "version": "1.0.0",
+  "description": "Part of basic web application project for Assembler School students",
+  "main": "index.php",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jose Manuel Orts",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.1",
+    "bootstrap-icons": "^1.0.0-alpha4",
+    "gridjs": "^5.0.2",
+    "jquery": "^3.5.1",
+    "jsgrid": "^1.5.3"
+  }
+}
